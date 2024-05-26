@@ -1,0 +1,53 @@
+$tile-size: 15px;
+$font-size: 12px;
+$font-weight: 300;
+
+:host {
+  .heatmap-container {
+    padding: 20px;
+    margin: 20px;
+
+    display: block;
+    width: fit-content;
+
+    background-color: white;
+
+    border: 1px solid lightgray;
+    border-radius: 5px;
+  }
+
+  table {
+    table-layout: fixed;
+  }
+
+  table, td, th, .tile {
+    border-collapse: collapse;
+
+    font-size: $font-size;
+    font-weight: $font-weight;
+  }
+
+  .week-label {
+    width: 30px;
+    line-height: $tile-size;
+  }
+
+  .tile {
+    width: $tile-size;
+    max-width: $tile-size;
+    height: $tile-size;
+    max-height: $tile-size;
+
+    border: 2px solid white;
+  }
+
+  .legend-table {
+    display: flex;
+    margin: 10px 0;
+
+    font-size: $font-size;
+    font-weight: $font-weight;
+
+    justify-content: end;
+  }
+}

@@ -1,0 +1,49 @@
+<body>
+  <div class="heatmap-container">
+    <table class="heatmap-table">
+      <thead>
+        <th></th>
+        <th class="header tile" *ngFor="let week of weeks">{{showMonthLabel(week) ? week.monthShort : ''}}</th>
+      </thead>
+      <tbody>
+        <tr *ngIf="IS_SUNDAY_FIRST_DAY_OF_WEEK">
+          <td class="week-label"></td>
+          <td class="tile" [title]="sunday.day" *ngFor="let sunday of sundays" [style.background-color]="sunday.color"></td>
+        </tr>
+        <tr>
+          <td class="week-label">{{IS_SUNDAY_FIRST_DAY_OF_WEEK ? mondays[0].day.weekdayShort : ''}}</td>
+          <td class="tile" [title]="monday.day" *ngFor="let monday of mondays" [style.background-color]="monday.color"></td>
+        </tr>
+        <tr>
+          <td class="week-label">{{!IS_SUNDAY_FIRST_DAY_OF_WEEK ? tuesdays[0].day.weekdayShort : ''}}</td>
+          <td class="tile" [title]="tuesday.day" *ngFor="let tuesday of tuesdays" [style.background-color]="tuesday.color"></td>
+        </tr>
+        <tr>
+          <td class="week-label">{{IS_SUNDAY_FIRST_DAY_OF_WEEK ? wednesdays[0].day.weekdayShort : ''}}</td>
+          <td class="tile" [title]="wednesday.day" *ngFor="let wednesday of wednesdays" [style.background-color]="wednesday.color"></td>
+        </tr>
+        <tr>
+          <td class="week-label">{{!IS_SUNDAY_FIRST_DAY_OF_WEEK ? thursdays[0].day.weekdayShort : ''}}</td>
+          <td class="tile" [title]="thursday.day" *ngFor="let thursday of thursdays" [style.background-color]="thursday.color"></td>
+        </tr>
+        <tr>
+          <td class="week-label">{{IS_SUNDAY_FIRST_DAY_OF_WEEK ? fridays[0].day.weekdayShort : ''}}</td>
+          <td class="tile" [title]="friday.day" *ngFor="let friday of fridays" [style.background-color]="friday.color"></td>
+        </tr>
+        <tr>
+          <td class="week-label">{{!IS_SUNDAY_FIRST_DAY_OF_WEEK ? saturdays[0].day.weekdayShort : ''}}</td>
+          <td class="tile" [title]="saturday.day" *ngFor="let saturday of saturdays" [style.background-color]="saturday.color"></td>
+        </tr>
+        <tr *ngIf="!IS_SUNDAY_FIRST_DAY_OF_WEEK">
+          <td class="week-label">{{IS_SUNDAY_FIRST_DAY_OF_WEEK ? sundays[0].day.weekdayShort : ''}}</td>
+          <td class="tile" [title]="sunday.day" *ngFor="let sunday of sundays" [style.background-color]="sunday.color"></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="legend-table">
+      <div>Less</div>
+      <div class="tile" *ngFor="let c of colors" [style.background-color]="c"></div>
+      <div>More</div>
+    </div>
+  </div>
+</body>
