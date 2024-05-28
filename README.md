@@ -4,11 +4,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files. Unless you already have Angular v18 cli installed, this requires you to run first `npm install -g @angular/cli@18`.
 
 OR
 
-Run `npm run build:docker` for a dockerized server. Navigate to `http://localhost:4200/`.
+Run `npm run build:docker` for a dockerized server. Navigate to `http://localhost:4200/`. Docker installation required.
 
 ## Application usage
 
